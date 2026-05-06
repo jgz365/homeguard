@@ -1,0 +1,11 @@
+# $HOME/.config/i3/execs
+
+# Wallpaper (requires 'feh')
+exec --no-startup-id feh --bg-scale $HOME/.config/i3/garden.jpeg
+exec --no-startup-id dex --autostart --environment i3
+
+# For cursor theme (recommended to install 'lxappearance')
+exec --no-startup-id xsetroot -cursor_name left_ptr
+
+# Polkit (requires 'lxpolkit')
+exec --no-startup-id /usr/bin/lxpolkit

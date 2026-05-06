@@ -1,0 +1,42 @@
+general {
+	output_format = "i3bar"
+	colors = false
+	markup = pango
+	interval = 5
+}
+
+order += "memory"
+order += "disk /"
+order += "wireless wlp3s0"
+order += "volume master"
+order += "time"
+
+
+memory {
+    format = "<span background='#bfbaac'> 󰍛 RAM: %used / %total </span>"
+    threshold_degraded = "10%"
+    format_degraded = "<span background='#bfbaac'> 󰍛 RAM: Getting heavy... %available left </span>"
+}
+
+disk "/" {
+       format = "<span background='#bfbaac'> 󰨣 %avail </span>"
+}
+
+wireless wlp3s0 {
+	format_up = "<span background='#bfbaac'> 󰤨 Internet:  Connected </span>"
+	format_down = "<span background='#bfbaac'> 󰤭 Internet:  Disconnected </span>"
+}
+
+volume master {
+	format = "<span background='#bfbaac'> 󱄠 Audio:  %volume </span>"
+	format_muted = "<span background='#bfbaac'> 󰝟 Muted </span>"
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+}
+
+
+time {
+    format = "<span background='#bfbaac'>  %b %d, %Y </span> <span background='#bfbaac'> 󰥔 %I:%M %p </span> <span background='#bfbaac'> 󰕶 %A </span>"
+}
+

@@ -1,0 +1,18 @@
+# $HOME/.config/i3/config
+
+# Using 'include' for cleaner file organization
+
+# For autostart
+include $HOME/.config/i3/execs
+# For keybinds
+include $HOME/.config/i3/binds
+# For 'i3status'
+include $HOME/.config/i3/bar
+# For theming
+include $HOME/.config/i3/class
+
+# Declare a global font
+font pango:MartianMonoNerdFont 13
+
+# Declare border thickness
+default_border pixel 4

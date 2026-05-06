@@ -1,0 +1,85 @@
+# $HOME/.config/i3/binds
+
+# Set Variables
+set $mod         Mod4
+set $high_vol    XF86AudioRaiseVolume
+set $high_bright XF86MonBrightnessUp
+set $low_vol     XF86AudioLowerVolume
+set $low_bright  XF86MonBrightnessDown
+set $mute   	 XF86AudioMute
+
+# Set Windows Key as the default modifier
+floating_modifier $mod
+tiling_drag modifier titlebar
+
+# Screenshot Tool
+bindsym Print exec --no-startup-id flameshot gui
+
+# Make 'Fn' work for Audio Adjustment (requires 'alsamixer')
+bindsym $high_vol exec --no-startup-id amixer -D pulse sset Master 2%+ unmute
+bindsym $low_vol exec --no-startup-id amixer -D pulse sset Master 2%- unmute
+
+# Make 'Fn' work for BrightnessAdjustment (requires 'brightnessctl')
+bindsym $high_bright exec --no-startup-id brightnessctl set +20%
+bindsym $low_bright exec --no-startup-id brightnessctl set 20%-
+bindsym $mute exec amixer set Master toggle
+
+# System Keybind
+# Default Navigation
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+
+# Workspaces
+bindsym $mod+1 workspace 1:A
+bindsym $mod+2 workspace 2:B
+bindsym $mod+3 workspace 3:C
+bindsym $mod+4 workspace 4:D
+bindsym $mod+5 workspace 5:E
+bindsym $mod+6 workspace 6:F
+bindsym $mod+7 workspace 7:G
+bindsym $mod+8 workspace 8:H
+bindsym $mod+9 workspace 9:I
+bindsym $mod+0 workspace 10:J
+
+# Move program from Workspace X to Workspace Y
+bindsym $mod+Shift+1 move container to workspace 1:A
+bindsym $mod+Shift+2 move container to workspace 2:B
+bindsym $mod+Shift+3 move container to workspace 3:C
+bindsym $mod+Shift+4 move container to workspace 4:D
+bindsym $mod+Shift+5 move container to workspace 5:E
+bindsym $mod+Shift+6 move container to workspace 6:F
+bindsym $mod+Shift+7 move container to workspace 7:G
+bindsym $mod+Shift+8 move container to workspace 8:H
+bindsym $mod+Shift+9 move container to workspace 9:I
+bindsym $mod+Shift+0 move container to workspace 10:J
+
+# Reload Configuration File
+bindsym $mod+Shift+c reload
+
+# Restart i3wm
+bindsym $mod+Shift+r restart
+
+# Kill Window
+bindsym $mod+q kill
+
+# Poweroff
+bindsym $mod+Shift+q exec "systemctl poweroff"
+
+# Exit Session
+# Program Keybind
+# Terminal
+bindsym $mod+Return exec xfce4-terminal # requires 'xfce4-terminal'
+
+# Application Launcher (requires 'j4-dmenu-desktop')
+set $app_menu dmenu -i -fn 'MartianMonoNerdFont:size=16' -nb '#141c21' -nf '#93a1a1' -sb '#9fc5e8' -sf '#141c21'
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="$app_menu"

@@ -1,0 +1,6 @@
+# $HOME/.config/i3/class
+
+client.focused          #9fc5e8 #9fc5e8 #9fc5e8 #9fc5e8 #9fc5e8 
+client.unfocused 	#72246C #72246C #72246C #72246C
+client.focused_inactive #72246C #72246C #72246C #72246C 
+client.urgent           #fb4934 #fb4934 #fb4934 #fb4934 #fb4934

@@ -1,0 +1,20 @@
+# $HOME/.config/i3/bar
+
+bar {
+	status_command 		i3status
+	position 		top
+	workspace_min_width 	24
+	padding 		2px 8px 2px 8px
+	strip_workspace_numbers yes
+
+	colors {
+	background 	#141c21
+	statusline 	#141c21
+	separator 	#141c21
+
+	focused_workspace 	#141c21 #3d85c6 #fff2cc
+	active_workspace 	#141c21 #141c21 #93a1a1
+	inactive_workspace 	#141c21 #141c21 #93a1a1
+	urgent_workspace 	#141c21 #b08500 #93a1a1
+	}
+}
