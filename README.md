@@ -13,6 +13,6 @@ To-Do List:
 - [x] Add configuration files 
 - [x] Create an install script
 - [ ] Add more configurations (e.g dunst, fonts, packages)
-- [ ] Vim configuration 
+- [x] Vim configuration 
 - [ ] Improvise script
 - [ ] Add auto-configuration for i3wm 
