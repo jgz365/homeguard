@@ -27,11 +27,17 @@ sudo apt-get update && sudo apt-get upgrade -y
 
 build=(
     build-essential gcc
-    git curl wget unzip
+    git unzip
 )
 
 terminal=(
     vim tmux
+)
+
+font_pack=(
+    fonts-noto fonts-noto-cjk
+    fonts-nojo-cjk-extra fonts-noto-color-emoji
+    fonts-noto-core ttf-mscorefonts-installer
 )
 
 wm=(
@@ -79,6 +85,7 @@ sleep 1
 sudo apt install -y \
     "${build[@]}" \
     "${terminal[@]}" \
+    "${font_pack[@]}" \
     "${wm[@]}" \
     "${display[@]}" \
     "${audio[@]}" \
@@ -171,6 +178,8 @@ mkdir -p "$HOME/.config/i3status/"
 cp -r "$HOME/homeguard/i3/" "$HOME/.config/"
 cp -r "$HOME/homeguard/i3status/" "$HOME/.config/"
 
+rm -rf "$HOME/homeguard"
+
 echo "Setup complete."
 sleep 1
 
@@ -178,6 +187,7 @@ echo "Performing system services..."
 sleep 2
 
 xdg-user-dirs-update
+echo "exec dbus-run-session i3" >> "$HOME/.xinitrc"
 systemctl --user enable pulseaudio.service
 
 if grep -qv '^#' /etc/network/interfaces; then
@@ -188,7 +198,7 @@ sudo sed -i 's/^managed=false/managed=true/' /etc/NetworkManager/NetworkManager.
 
 clear
 echo "Don't forget to connect to the internet with 'nmtui'"
-sleep 2
+sleep 3
 
 echo "Installation Complete. System will reboot in:"
 
