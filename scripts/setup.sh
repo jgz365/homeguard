@@ -42,7 +42,7 @@ wm=(
 )
 
 display=(
-    xorg xinit x11-server-utils
+    xorg xinit x11-xserver-utils
 )
 
 audio=(
