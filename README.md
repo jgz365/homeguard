@@ -15,4 +15,4 @@ To-Do List:
 - [ ] Add more configurations (e.g dunst, fonts, packages)
 - [x] Vim configuration 
 - [ ] Improvise script
-- [ ] Add auto-configuration for i3wm 
+- [x] Add auto-configuration for i3wm 
