@@ -11,6 +11,8 @@ Sources used:
 To-Do List:
 - [x] Create the repository
 - [x] Add configuration files 
-- [ ] Create an install script to sets up my configuration file (personal use)
-- [ ] Add more things (e.g dunst, fonts, packages)
+- [x] Create an install script
+- [ ] Add more configurations (e.g dunst, fonts, packages)
 - [ ] Vim configuration 
+- [ ] Improvise script
+- [ ] Add auto-configuration for i3wm 
