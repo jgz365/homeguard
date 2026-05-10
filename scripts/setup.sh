@@ -177,6 +177,7 @@ mkdir -p "$HOME/.config/i3status/"
 
 cp -r "$HOME/homeguard/i3/" "$HOME/.config/"
 cp -r "$HOME/homeguard/i3status/" "$HOME/.config/"
+cp "$HOME/homeguard/.vimrc" "$HOME"
 
 rm -rf "$HOME/homeguard"
 
