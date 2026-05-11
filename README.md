@@ -4,10 +4,36 @@
 
 Simple i3wm setup for my system.
 
+### This was configured on a 1920x1080 laptop
+
 To install:
 ```
 bash <(wget -qO- https://raw.githubusercontent.com/jgz365/homeguard/main/scripts/setup.sh)
 ```
+
+Checklist:
+
+Complete: 
+
+- [x] Create the repository
+- [x] Add configuration files 
+
+Script:
+
+- [x] Create an install script
+- [x] Include vim configuration 
+- [x] Include my dotfiles
+- [x] Tested to work without failures (VM & Bare Metal tested)
+
+Incomplete/In Progress:
+
+- [ ] Add a configuration file for Ghostty
+- [ ] Add a configuration file for dunst
+- [ ] Add my custom bash prompt that detects System Age
+- [ ] Import settings.ini for automatic GTK Theming
+- [ ] Better package cleaup (remove package Y pulled by package X)
+- [ ] Simple LSP + Syntax Highlighting for Vim, primarily for C Language
+- [ ] Improvise script
 
 Sources used:
 - [i3-starterpack](https://github.com/addy-dclxvi/i3-starterpack)
@@ -19,11 +45,3 @@ Sources used:
 - [Bash Git Prompt](https://github.com/magicmonty/bash-git-prompt)
 - [Bash Syntax](https://www.w3schools.com/bash/bash_syntax.php)
 
-To-Do List:
-- [x] Create the repository
-- [x] Add configuration files 
-- [x] Create an install script
-- [ ] Add more configurations (e.g dunst, fonts, packages)
-- [x] Vim configuration 
-- [x] Improvise script
-- [x] Add auto-configuration for i3wm 

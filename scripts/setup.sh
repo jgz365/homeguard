@@ -9,10 +9,12 @@ fi
 
 if ! grep -q " contrib" /etc/apt/sources.list; then
     echo "Adding contrib, non-free, non-free-firmware..."
+    sleep 3
     sudo sed -i 's/ main/ main contrib non-free non-free-firmware/' /etc/apt/sources.list
     sudo apt-get update
 else
     echo "Repositories already configured"
+    sleep 2
 fi
 
 clear 
@@ -82,7 +84,7 @@ utils=(
 echo "Installing packages..."
 sleep 1
 
-sudo apt install -y \
+sudo apt-get install -y \
     "${build[@]}" \
     "${terminal[@]}" \
     "${font_pack[@]}" \
@@ -170,7 +172,6 @@ EOF
 sleep 1
 echo "Cloning homeguard..."
 git clone "https://github.com/jgz365/homeguard.git" "$HOME/homeguard"
-# mkdir -p "$HOME/.config" Unnecessary(?)
 
 mkdir -p "$HOME/.config/i3/"
 mkdir -p "$HOME/.config/i3status/"
