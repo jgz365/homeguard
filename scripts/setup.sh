@@ -36,7 +36,7 @@ terminal=(
 
 font_pack=(
     fonts-noto fonts-noto-cjk
-    fonts-nojo-cjk-extra fonts-noto-color-emoji
+    fonts-noto-cjk-extra fonts-noto-color-emoji
     fonts-noto-core ttf-mscorefonts-installer
 )
 

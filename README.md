@@ -6,7 +6,7 @@ Simple i3wm setup for my system.
 
 To install:
 ```
-bash <(wget -q0- https://raw.githubusercontent.com/jgz365/homeguard/main/scripts/setup.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/jgz365/homeguard/main/scripts/setup.sh)
 ```
 
 Sources used:
