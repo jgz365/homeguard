@@ -1,0 +1,39 @@
+# Add Support for C Language
+
+[[language]]
+name = "c"
+language-servers = ["clangd"]
+auto-format = false
+indent = { tab-width = 4, unit = "    " }
+file-types=["c"]
+
+# Add Support for Bash
+
+[[language]]
+name = "bash"
+language-servers = ["bash-language-server"]
+auto-format = false
+indent = { tab-width = 4, unit = "    " }
+
+# Add Support for HTML
+
+[[language]]
+name = "html"
+auto-format = false
+indent = { tab-width = 4, unit = "    " }
+file-types=["html"]
+
+# Add Support for JSON
+
+[[language]]
+name = "json"
+auto-format = false
+indent = { tab-width = 4, unit = "    " }
+file-types=["json jsonc"]
+
+# Add Suppport for Markdown
+
+[[language]]
+name = "markdown"
+auto-format = false
+indent = { tab-width = 4, unit = "    " }

@@ -1,0 +1,51 @@
+/* Default to squared corners */
+:root {
+  --tab-border-radius: 0px !important;
+  --toolbarbutton-border-radius: 0px !important;
+  --button-border-radius: 0px !important;
+  --border-radius-medium: 0px !important;
+  --arrowpanel-border-radius: 0px !important;
+  --arrowpanel-menuitem-border-radius: 0px !important;
+}
+
+menupopup, tooltip {
+  border-radius: 0 !important;
+}
+
+#PanelUI-menu-button { 
+	display: none !important; 
+}
+
+#unified-extensions-button {
+  display: none !important;
+}
+
+/* Remove Back, Forward, and Reload buttons */
+#back-button,
+#forward-button,
+#reload-button,
+#stop-button {
+  display: none !important;
+}
+
+/* Remove tab close button */
+.tab-close-button {
+  display: none !important;
+}
+
+/* Remove unused toolbar spacing */
+.toolbarbutton-1 {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Disable all animations and transitions */
+* {
+    transition: none !important;
+    animation: none !important;
+}
+
+/* Hide "bookmark this page" icon */
+#star-button-box {
+    display: none !important;
+}

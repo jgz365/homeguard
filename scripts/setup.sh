@@ -7,6 +7,13 @@ if [[ $EUID -eq 0 ]]; then
     exit 1
 fi
 
+echo "Starting installation in:"
+
+for n in {5..1}; do
+    echo "$n..."
+    sleep 1
+done
+
 if ! grep -q " contrib" /etc/apt/sources.list; then
     echo "Adding contrib, non-free, non-free-firmware..."
     sleep 3
@@ -26,76 +33,51 @@ sleep 2
 
 sudo apt-get update && sudo apt-get upgrade -y
 
+while true; do
+    read -p "Install NVIDIA Driver? y/n " confirm
+        case "$confirm"; in
+            [yY] | "")
+                clear
+                echo "Installing NVIDIA drivers..."
+                sleep 2
+                sudo apt-get install -y linux-headers-generic \
+                    build-essential nvidia-detect
+                clear
+                nvidia-detect
+                sudo apt-get install -y nvidia-driver
+                clear
+                echo "NVIDIA driver has been installed."
+                sleep 2
+                break
+                ;;
+            [nN])
+                echo "Not installing NVIDIA drivers..."
+                sleep 1
+                clear
+                break
+                ;;
+            *)
+                echo "Invalid input. Try again. (y/n)"
+                ;;
+         esac
+    done
 
-build=(
-    build-essential gcc
-    git unzip
-)
-
-terminal=(
-    vim tmux
-)
-
-font_pack=(
-    fonts-noto fonts-noto-cjk
-    fonts-noto-cjk-extra fonts-noto-color-emoji
-    fonts-noto-core ttf-mscorefonts-installer
-)
-
-wm=(
-    i3 i3status i3lock
-    j4-dmenu-desktop
-    picom dunst feh
-    brightnessctl
-)
-
-display=(
-    xorg xinit x11-xserver-utils
-)
-
-audio=(
-    pulseaudio pulseaudio-utils
-    alsa-utils pavucontrol
-)
-
-theme=(
-    lxappearance
-    arc-theme papirus-icon-theme
-)
-
-system=(
-    network-manager
-    xdg-utils xdg-user-dirs
-    polkitd gvfs-backends
-)
-
-files=(
-    thunar thunar-volman
-    ffmpegthumbnailer
-)
-
-utils=(
-    mpv ffmpeg
-    mousepad redshift
-    flameshot xclip
-    libnotify-bin obs-studio
+packages=(
+    gcc git vim tmux \
+        fonts-noto fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-color-emoji \
+        fonts-noto-core ttf-mscorefonts-installer \
+        i3 i3status i3lock j4-dmenu-desktop picom dunst feh brightnessctl \
+        xorg xinit x11-server-utils pulseaudio pulseaudio-utils alsa-utils \
+        pavucontrol lxappearace arc-theme papirus-icon-theme network-manager \
+        unzip xdg-utils xdg-user-dirs polkitd gvfs-backends thunar thunar-volman \
+        ffmpegthumbnailer ffmpeg mpv mousepad redshift flameshot xclip libnotify-bin obs-studio
 )
 
 echo "Installing packages..."
 sleep 1
 
-sudo apt-get install -y \
-    "${build[@]}" \
-    "${terminal[@]}" \
-    "${font_pack[@]}" \
-    "${wm[@]}" \
-    "${display[@]}" \
-    "${audio[@]}" \
-    "${theme[@]}" \
-    "${system[@]}" \
-    "${files[@]}" \
-    "${utils[@]}"
-
+sudo apt-get install -y "${packages[@]}"
+    
 echo "Installation Complete."
 sleep 2
 clear
@@ -175,15 +157,25 @@ git clone "https://github.com/jgz365/homeguard.git" "$HOME/homeguard"
 
 mkdir -p "$HOME/.config/i3/"
 mkdir -p "$HOME/.config/i3status/"
+mkdir -p "$HOME/.config/ghostty/"
+mkdir -p "$HOME/.config/fastfetch/"
+mkdir -p "$HOME/.config/dunst/"
+mkdir -p "$HOME/.config/picom/"
 
 cp -r "$HOME/homeguard/i3/" "$HOME/.config/"
 cp -r "$HOME/homeguard/i3status/" "$HOME/.config/"
+cp -r "$HOME/homeguard/ghostty/" "$HOME/.config/"
+cp -r "$HOME/homeguard/fastfetch/" "$HOME/.config/"
+cp -r "$HOME/homeguard/dunst/" "$HOME/.config/"
+cp -r "$HOME/homeguard/picom/" "$HOME/.config/"
+
 cp "$HOME/homeguard/.vimrc" "$HOME"
 
 rm -rf "$HOME/homeguard"
 
-echo "Setup complete."
+echo "Dotfiles are set."
 sleep 1
+clear
 
 echo "Performing system services..."
 sleep 2
