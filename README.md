@@ -6,7 +6,7 @@ Some sets of my personal configuration in linux.
 
 > The "unmaintained" folder is my archived folder, it hasn't been used for a while so they may or may not work. They are not included in the script.
 
-To install:
+To install (specifically in Debian 13)
 ```
 bash <(wget -qO- https://raw.githubusercontent.com/jgz365/homeguard/main/scripts/setup.sh)
 ```
