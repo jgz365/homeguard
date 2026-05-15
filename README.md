@@ -1,10 +1,8 @@
-# Debian i3wm dotfiles
+# homeguard
 
 ![description](assets/desktop-i3.png)
 
-Simple i3wm setup for my system.
-
-### This was configured on a 1920x1080 laptop
+Some sets of my personal configuration in linux.
 
 > The "unmaintained" folder is my archived folder, it hasn't been used for a while so they may or may not work. They are not included in the script.
 
@@ -35,6 +33,7 @@ Script:
 Incomplete/In Progress:
 
 - [ ] Add my custom bash prompt that detects system age
+- [ ] Script re-write - can never feel satisfied
 - [ ] Import settings.ini for automatic GTK Theming
 - [ ] Better package cleaup (remove package Y pulled by package X)
 - [ ] Simple LSP + Syntax Highlighting for Vim, primarily for C Language
